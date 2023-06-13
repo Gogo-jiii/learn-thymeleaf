@@ -7,21 +7,36 @@
 
 <body>
 
+    <p>1) Print normal text from a model object:</p>
     <p th:text="|Name:  ${attr.name}|"></p>
     <p th:text="|is Admin: ${attr.isAdmin}|"></p>
+    <p>------------------------------------------------------------------------------------</p>
 
+    <p>2) Use ternary operator for If-Else:</p>
     <p>If the user is an Admin then the result would be YES, otherwise NO.</p>
     <p></p>
     <p>=> <span th:text="${attr.isAdmin} ? 'YES' : 'NO' "></span> </p>
+    <p>------------------------------------------------------------------------------------</p>
 
+    <p>3) Use If-Unless attributes:</p>
     <p>If the user is an Admin then the result would be YES, otherwise NO.</p>
     <p></p>
     <p>=> <span th:if="${attr.isAdmin}">YES</span>
           <span th:unless="${attr.isAdmin}">NO</span>
     </p>
-    
+    <p>------------------------------------------------------------------------------------</p>
 
+    <p>4) Print the first element of a list:</p>
     <p th:text="| First item of the list is: ${list[0]}|"></p>
+    <p>------------------------------------------------------------------------------------</p>
+
+    <p>5) Loop through a list and print its elements:</p>
+    <p>Iteration Loop:</p>
+    <tr th:each="item : ${list}">
+        <td th:text="${item}"></td>
+    </tr>
+    <p>------------------------------------------------------------------------------------</p>
+    
 </body>
 
 </html>
