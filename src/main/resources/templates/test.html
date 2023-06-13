@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+</head>
+
+<body>
+
+    <p th:text="|Name:  ${attr.name}|"></p>
+    <p th:text="|is Admin: ${attr.isAdmin}|"></p>
+
+    <p>If the user is an Admin then the result would be YES, otherwise NO.</p>
+    <p></p>
+    <p>=> <span th:text="${attr.isAdmin} ? 'YES' : 'NO' "></span> </p>
+
+    <p>If the user is an Admin then the result would be YES, otherwise NO.</p>
+    <p></p>
+    <p>=> <span th:if="${attr.isAdmin}">YES</span>
+          <span th:unless="${attr.isAdmin}">NO</span>
+    </p>
+    
+
+    <p th:text="| First item of the list is: ${list[0]}|"></p>
+</body>
+
+</html>
